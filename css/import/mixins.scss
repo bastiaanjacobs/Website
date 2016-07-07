@@ -1,0 +1,264 @@
+// File: mixins.scss
+// Author: Bas Jacobs
+
+
+//infinite
+@mixin infinite {
+    width: 60px;
+    height: 40px;
+    position: relative;
+    padding: 0;
+    margin: 1rem;
+    float: left;
+
+	&:before, &:after {
+	    content: "";
+	    width: 40px;
+	    height: 40px;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    border: 7px solid $white;
+	    opacity: .5;
+	    transition: all .25s;
+	    @include border-box;
+	    -moz-border-radius: 50px 50px 0;
+	    border-radius: 50px 50px 0 50px;
+	    -webkit-transform: rotate(-45deg);
+	    -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	    -o-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.2);
+	}
+
+	&:after {
+	    left: 20px;
+	    right: 0;
+	    -moz-border-radius: 50px 50px 50px 0;
+	    border-radius: 50px 50px 50px 0;
+	    -webkit-transform: rotate(0deg);
+	    -moz-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	    -o-transform: rotate(0deg);
+	    transform: rotate(0deg);
+	}
+	
+	&:hover:after {
+		left: 47px;
+	    -webkit-transform: rotate(45deg);
+	    -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	}
+}
+
+
+//boxing
+@mixin border-box { box-sizing: border-box; }
+@mixin content-box { box-sizing: content-box; }
+
+
+//padding 
+@mixin padding 		{ padding: $space; }
+@mixin padding-top 	{ padding-top: $space; }
+@mixin padding-right 	{ padding-right: $space; }
+@mixin padding-bottom { padding-bottom: $space; }
+@mixin padding-left 	{ padding-left: $space; }
+
+
+//margin 
+@mixin margin 		{ margin: $space; }
+@mixin margin-top 	{ margin-top: $space; }
+@mixin margin-right 	{ margin-right: $space; }
+@mixin margin-bottom 	{ margin-bottom: $space; }
+@mixin margin-left 	{ margin-left: $space; }
+
+
+//text
+@mixin uppercase { text-transform: uppercase; }
+@mixin lowercase { text-transform: lowercase; }
+
+@mixin small-font { font-size: .75rem; }
+@mixin medium-font { font-size: 1rem; }
+@mixin large-font { font-size: 1.75rem; }
+
+
+//buttons
+@mixin btn {
+	@include medium-font;
+	@include rounded(2px);
+	color: $white;
+	position: relative;
+	display: inline-block;
+	padding: $space/2 2rem;
+	margin: 30px auto;
+	height: auto;
+	background-color: transparent;
+	border: 2px solid rgba(255,255,255,.75);
+	@include transition;
+	cursor: pointer;
+	&:hover { background: $white; color: $grey; }
+}
+
+@mixin opacity ($opacity) { -webkit-opacity: $opacity; -moz-opacity: $opacity; opacity: $opacity; }
+
+@mixin rounded ($radius: $space) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+@mixin transition {
+	-webkit-transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	-moz-transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	-ms-transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	-o-transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@mixin gradient-animator {
+    background: -webkit-linear-gradient(45deg, $white 10%, $light-grey 90%);
+    background: linear-gradient(45deg, $white 10%, $light-grey 90%);
+    background-size: 200% 100% !important;
+
+    overflow: hidden;
+
+	-webkit-animation: gradientAnimation 10s ease infinite;
+	animation: gradientAnimation 10s ease infinite;
+
+	@-webkit-keyframes gradientAnimation {
+	    0% { background-position: 0% 50% }
+	    50% { background-position: 100% 50% }
+	    100% { background-position: 0% 50% }
+	}
+	@-moz-keyframes gradientAnimation {
+	    0% { background-position: 0% 50% }
+	    50% { background-position: 100% 50% }
+	    100% { background-position: 0% 50% }
+	}
+	@keyframes gradientAnimation { 
+	    0% { background-position: 0% 50% }
+	    50% { background-position: 100% 50% }
+	    100% { background-position: 0% 50% }
+	}
+}
+
+@mixin fogAnimator {
+	background-size: cover;
+
+	-moz-animation: fogAnimation 200s linear infinite;
+	-ms-animation: fogAnimation 200s linear infinite;
+	-o-animation: fogAnimation 200s linear infinite;
+	-webkit-animation: fogAnimation 200s linear infinite;
+	animation: fogAnimation 200s linear infinite;
+
+	@keyframes fogAnimation { 
+	    from {background-position: 0 0;}
+	    to {background-position: 10000px 0;}
+	}
+	@-webkit-keyframes fogAnimation { 
+	    from {background-position: 0 0;}
+	    to {background-position: 10000px 0;}
+	}
+	@-moz-keyframes fogAnimation {
+	    from {background-position:0 0;}
+	    to {background-position: 10000px 0;}
+	}
+	@-ms-keyframes fogAnimation {
+	    from {background-position:0 0;}
+	    to {background-position: 10000px 0;}
+	}
+}
+
+@mixin fogAnimatorOpposite {
+	background-size: cover;
+
+	-moz-animation: fogAnimatorOpposite 300s linear infinite;
+	-ms-animation: fogAnimatorOpposite 300s linear infinite;
+	-o-animation: fogAnimatorOpposite 300s linear infinite;
+	-webkit-animation: fogAnimatorOpposite 300s linear infinite;
+	animation: fogAnimatorOpposite 300s linear infinite;
+
+	@keyframes fogAnimatorOpposite { 
+	    from {background-position: 0 0;}
+	    to {background-position: -10000px 0;}
+	}
+	@-webkit-keyframes fogAnimatorOpposite { 
+	    from {background-position: 0 0;}
+	    to {background-position: -10000px 0;}
+	}
+	@-moz-keyframes fogAnimatorOpposite {
+	    from {background-position:0 0;}
+	    to {background-position: -10000px 0;}
+	}
+	@-ms-keyframes fogAnimatorOpposite {
+	    from {background-position:0 0;}
+	    to {background-position: -10000px 0;}
+	}
+}
+
+
+//card
+@mixin card {
+	color: $theme4;
+    display: inline-block;
+    border: 0px solid $light-grey;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+    background: -webkit-linear-gradient(45deg, $white, $light-grey);
+    opacity: 1;
+    border-radius: 2px;
+    width: 100%;
+    margin: 0 $space $space 0;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    a, a:hover, a:visited, a:active { 
+			color: $theme4;
+    }
+
+    @media only screen and (min-width: 620px) {
+    	width: calc(25% - 1rem);
+    }
+}
+
+//card dark
+@mixin card__dark {
+	color: $white;
+	height: 250px;
+    display: inline-block;
+    background: $theme4;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+    opacity: 1;
+    border-radius: 2px;
+    width: 100%;
+    margin: 0 $space $space 0;
+    overflow: hidden;
+    box-sizing: border-box;
+	
+	a, a:hover, a:visited, a:active { 
+			color: $white; 
+	}
+
+	@media only screen and (min-width: 620px) {
+    	width: calc(50% - 1rem);
+    }
+}
+ 
+
+//grid
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

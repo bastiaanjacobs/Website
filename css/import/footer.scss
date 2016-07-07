@@ -1,0 +1,16 @@
+// File: Footer
+// Author: Bas Jacobs
+
+
+/* footer */
+
+footer {
+	background: $white;
+    clear: both;
+    text-align: center;
+    font-style: normal;
+    @include padding;
+    font-size: 1.4em;
+    color: #434343;
+    @include rounded(5px);
+}

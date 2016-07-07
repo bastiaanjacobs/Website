@@ -1,0 +1,466 @@
+// File: content.scss
+// Author: Bas Jacobs
+
+
+//overall
+.hidden { display: none; }
+
+html { height: 100%; }
+body {
+    color: #111;
+    font-size: 14px;
+    font-family: Raleway, arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+}
+
+@media only screen and (min-width: 1280px) {
+    main { margin: 0 auto; /*max-width: $width;*/ }
+}
+
+.post-filter { text-align: center; text-transform: uppercase;
+    & .filter-item {
+        font-family: Dosis, arial, sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.4em;
+        color: $grey;
+        cursor: pointer;
+        display: inline-block;
+        width: 50%;
+        margin: 0;
+        padding: $space/2 $space;
+        box-sizing: border-box;
+        &.active {  
+            color: $dark-grey;
+        }
+        & li {
+            display: none;
+            margin-right: 5px;
+        }
+    }
+}
+@media only screen and (min-width: 620px) {
+    .post-filter .filter-item { 
+        width: auto;
+    }
+}
+
+.post-grid__container {
+    position: relative;
+    /*background: $light-grey;*/
+    @include gradient-animator;
+    margin: 0;
+    padding: $space;
+    box-sizing: border-box;
+}
+@media only screen and (min-width: 620px) {
+    .post-grid__container {
+        padding: $space 0 0 $space;
+    }
+}
+.post-grid {
+    position: relative;
+    display: block;
+    max-width: 1280px;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#person.stamp {
+    @include card;
+    transition: all .25s;
+    & .person__face {
+        position: relative;
+        left: calc(50% - 40px);
+        top: -40px;
+        width: 80px;
+        height: 80px;
+        border: 0px solid $white;
+        transition: all .25s;
+        @include rounded(50%);
+    }
+    & .person__introduction {
+        padding: $space;
+    }
+    & .person__social {
+        font-size: 20px;
+        padding: 0;
+        display: flex;
+        border-top: 1px solid #e8e8e8;
+        background: $theme1;
+        & li {
+            float: left;
+            width: 33.333%;
+            padding: $space/2 $space;
+            box-sizing: border-box;
+            border-right: 1px solid #e8e8e8;
+            text-align: center;
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+    &:hover {
+        color: $white;
+        background: $theme4;
+        & .person__social { 
+            background: $theme4;
+            border-color: #292929;
+            & li {
+                border-color: #292929;
+            }
+        }
+    }
+}
+
+.post-unit:not(.sharepoint) {
+    @include card__dark;
+    display: none;
+    position: relative;
+    &.active { display: block; }
+    & .post-unit__image {
+        float: left;
+        overflow: hidden;
+        height: 100%;
+        & img {
+            height: 100%;
+        }
+    }
+    & .post-unit__intro {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: $theme4;
+        /*
+        &:before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: calc(50% - 30px);
+
+            width: 0; 
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 25px solid $white;
+            transition: all .25s;
+        }
+        */
+    }
+    &:nth-child(odd) .post-unit__intro {
+        left: 0;
+    }
+}
+.css { 
+    @include card
+    background: $theme4;
+    & a, a:hover, a:visited, a:active { 
+            color: $white;
+    }
+    & .post-unit__image {
+        width: 100%;
+        overflow: hidden;
+        & img {
+            height: auto;
+            max-width: 100%;
+        }
+    }
+    & .post-unit__intro {
+        background: $theme4;
+        width: 100%;
+    }
+}
+.sharepoint { 
+    @include card 
+    & .post-unit__image {
+        width: 100%;
+        overflow: hidden;
+        & img {
+            height: auto;
+            max-width: 100%;
+        }
+    }
+    & .post-unit__intro {
+        background: $white;
+        width: 100%;
+    }
+}
+
+.post-unit__more a {
+    position: absolute;
+    left: $space;
+    top: $space;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    padding: $space/2 $space;
+    border-radius: 0;
+    color: $white;
+}
+.post-unit__more:hover {
+    & a:hover {
+        color: $theme4;
+        background: $white;
+   }
+   & a:visited {
+        color: $white;
+   }
+}
+
+.post-unit-image {
+    display: block;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    &:hover { 
+        transform: scale(1.05); 
+        opacity: .5;
+    }
+}
+
+.post-title,
+.post-cat,
+.post-date { padding: $space/2 $space; }
+
+.post-title {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.post-cat .post-categories { display: inline-block; clear: both; }
+.post-cat .post-categories > li { 
+    float: left;
+    background: transparent;
+    padding: 0 $space/2 0 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.font-alt { font-family: Dosis, arial, sans-serif; text-transform: uppercase; letter-spacing: 0.2em; }
+
+p { font-size: 1.6em; line-height: 1.75em; color: #565656; margin-bottom: 12px; }
+a { text-decoration: none; 
+    color: #323232; 
+    transition: color .2s linear; 
+    -webkit-transition: color .2s linear; 
+    -moz-transition: color .2s linear; 
+}
+a:hover { text-decoration: underline; color: #313131; }
+::selection { color: #fff; background: rgba(0, 0, 0, 0.85); }
+
+
+/* wrapper */
+.wrapper { max-width: 100%; margin: 0 auto; }
+
+#site-header { color: #fff; margin-bottom: 35px; }
+
+#site-header h1 a, #site-header h1 a:hover, 
+#site-header #site-description a, #site-header #site-description a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#header-background {
+    max-height: 450px;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 0;
+    position: relative;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+}
+
+h1 a {
+    color: #575757;
+}
+
+h1 a:hover {
+    color: #575757;
+    text-decoration: none;
+}
+
+#mainbody {
+    display: block;
+    z-index: auto;
+    width: 100%;
+}
+
+.btn { @include btn }
+
+.back-to__top {
+    position: fixed;
+    right: $space;
+    bottom: -$space*3;
+    padding: 0;
+    background: rgba(244,244,244,.75);
+    cursor: pointer;
+    height: $space*3;
+    width: $space*3;
+    text-align: center;
+    line-height: 48px;
+    z-index: 1;
+    border: 0;
+    box-sizing: border-box;
+    transition: bottom .25s;
+}
+.lock .back-to__top { bottom: $space; }
+
+
+//preload
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: $theme1;
+    box-sizing: border-box;
+
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+
+    z-index: 1001;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: $theme2;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: $theme3;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0%   { 
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   { 
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34,34,34,.9);
+    z-index: 1000;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+
+    -webkit-transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+    transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    display: none;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+
+    -webkit-transition: all 0.4s 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+    transition: all 0.4s 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;  
+    transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+    visibility: hidden;
+
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+
+    -webkit-transition: all 0.3s 1s ease-out;  
+    transition: all 0.3s 1s ease-out;
+}
+
+/* JavaScript Turned Off */
+.no-js #loader-wrapper {
+    display: none;
+}
