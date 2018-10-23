@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column wrap;
+    .container {
+        flex-flow: row wrap;
+        width: 1110px;
+        margin: auto;
+        &-fluid {
+            width: 100%;
+            flex-flow: row wrap;
+            margin: auto;
+        }
+    }
+}

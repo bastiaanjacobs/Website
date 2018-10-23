@@ -1,0 +1,14 @@
+footer {
+    padding: $space;
+    background: $grey;
+    ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        li {
+            list-style: none;
+            padding: $space;
+            margin: 0;
+        }
+    }
+}
