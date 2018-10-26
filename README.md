@@ -31,7 +31,7 @@ gulp
 ```
 ## Authors
 
-* **Bastiaan Jacobs** - *Initial work* - [PurpleBooth](https://github.com/bastiaanjacobs)
+* **Bastiaan Jacobs** - *Initial work* - [Bastiaan Jacobs](https://bastiaanjacobs.nl)
 
 ## License
 
