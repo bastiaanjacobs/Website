@@ -5,10 +5,10 @@ var gulp                    = require('gulp');
 var browserSync             = require('browser-sync').create();
 var clean                   = require('gulp-clean');
 var sass                    = require('gulp-sass');
-var minifyCss               = require('gulp-minify-css');               //minifies css
+var minifyCss               = require('gulp-minify-css');
 var sourcemaps              = require('gulp-sourcemaps');
-var concat 		            = require('gulp-concat');                   //joins multiple files into one
-var rename                  = require('gulp-rename');                   //renames files
+var concat 		            = require('gulp-concat');
+var rename                  = require('gulp-rename');
 var fileinclude             = require('gulp-file-include');
 var ts                      = require('gulp-typescript');
 var tsProject               = ts.createProject('tsconfig.json');
@@ -22,7 +22,7 @@ var fontFiles = 'src/fonts/**/*';
 var componentFiles = 'src/index.html';
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['fonts','images','js','scss','components'], function() {
+gulp.task('serve', ['clean','fonts','images','js','scss','components'], function() {
 	browserSync.init({
         server: {
             baseDir: "./",
@@ -33,19 +33,20 @@ gulp.task('serve', ['fonts','images','js','scss','components'], function() {
 
     gulp.watch("src/scss/**/*.scss", ['scss']);
     gulp.watch("src/js/**/*.js", ['js']);
+    gulp.watch("src/img/**/*", ['images']);
     gulp.watch("src/**/*.html", ['components']);
 	gulp.watch("src/**/*").on('change', browserSync.reload);
 });
 
 gulp.task('scss', function () {
-    return gulp.src(scss_src)                           //reads all the SASS files
+    return gulp.src(scss_src)
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))            //compiles SASS to CSS and logs errors
-    .pipe(minifyCss())                                  //minifies the CSS files 
-    .pipe(concat('main.css'))                           //concatenates all the CSS files into one 
-    .pipe(rename({                                      //renames the concatenated CSS file
-      basename : 'main',                                //the base name of the renamed CSS file
-      extname : '.min.css'                              //the extension fo the renamed CSS file
+    .pipe(sass().on('error', sass.logError))
+    .pipe(minifyCss())
+    .pipe(concat('main.css'))
+    .pipe(rename({
+      basename : 'main',
+      extname : '.min.css'
     }))
     .pipe(sourcemaps.write('./_sourcemaps'))
     .pipe(gulp.dest('./dist/css'))

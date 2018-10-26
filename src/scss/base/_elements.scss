@@ -1,4 +1,7 @@
 html {
+	* {
+		box-sizing: border-box;
+	}
 	box-sizing: border-box;
 	font: #{$base-fontsize}/#{$base-lineheight} $default-font;
 	color: $color-text;
