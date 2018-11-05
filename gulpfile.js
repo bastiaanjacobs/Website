@@ -22,7 +22,7 @@ var fontFiles = 'src/fonts/**/*';
 var componentFiles = 'src/index.html';
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['clean','fonts','images','js','scss','components'], function() {
+gulp.task('serve', ['fonts','js','scss','components'], function() {
 	browserSync.init({
         server: {
             baseDir: "./",
