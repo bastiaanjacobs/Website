@@ -1,6 +1,7 @@
 footer {
     padding: $space;
     background: $grey;
+    a { @include link-colors($secondary-color, $primary-color, $secondary-color, $secondary-color, $secondary-color); }
     ul {
         display: flex;
         padding: 0;

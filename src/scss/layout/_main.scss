@@ -8,7 +8,7 @@ main {
         height: 431px;
         color: #fff;
         padding: 0;
-        background: url(../img/reef.jpg) center no-repeat;
+        background: url(../img/bg.jpg) center no-repeat;
         background-size: cover;
         &:after, &:before {
             content: '';
@@ -43,9 +43,9 @@ main {
         &__navigation {
             margin: 0 $space*4 $space*2 $space*4;
             color: #fff;
+            a { @include link-colors(#fff, $secondary-color, #fff, #fff, #fff); }
             .site__title {
                 font-size: $xl;
-                text-shadow: 2px 2px $dark-grey;
             }
             .site__breadcrumb {
                 font-size: $m;

@@ -1,0 +1,25 @@
+@mixin link-colors($normal, $hover: false, $active: false, $visited: false, $focus: false) {
+    text-decoration: none;
+    color: $normal;
+    @if $visited {
+      &:visited {
+        color: $visited;
+      }
+    }
+    @if $focus {
+      &:focus {
+        color: $focus;
+      }
+    }
+    @if $hover {
+      &:hover {
+        color: $hover;
+        border-bottom: 1px solid $hover;
+      }
+    }
+    @if $active {
+      &:active {
+        color: $active;
+      }
+    }
+  }

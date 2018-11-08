@@ -8,6 +8,9 @@
 @import "settings/_variables";
 @import "settings/_animations";
 
+// Helpers
+@import "helpers/_mixins";
+
 // Base
 @import "base/_normalize";
 @import "base/_elements";
@@ -16,4 +19,5 @@
 @import "layout/_footer";
 @import "layout/_grid";
 @import "layout/_header";
+@import "layout/_logo";
 @import "layout/_main";
