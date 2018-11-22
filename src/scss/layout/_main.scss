@@ -5,7 +5,9 @@ main {
         flex-flow: row wrap;
         position: relative;
         width: 100%;
+        //fallback
         height: 431px;
+        height: calc(100vh - 100vh + 431px * 2 / 2 + 14px - 1rem);
         color: #fff;
         padding: 0;
         background: url(../img/bg.jpg) center no-repeat;
@@ -52,6 +54,7 @@ main {
             }
         }
         &__inner {
+            position: relative;
             padding: $space*2 $space*4;
             margin: 0;
             min-height: 100vh;
