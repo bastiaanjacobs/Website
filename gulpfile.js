@@ -14,15 +14,14 @@ var ts                      = require('gulp-typescript');
 var tsProject               = ts.createProject('tsconfig.json');
 
 var scss_src = 'src/scss/**/*.scss';
-var sassFiles = 'src/sass/**/*.scss';
-var imageFiles = 'src/img/**/*';
+var imageFiles = 'src/img/*';
 var jsFiles = 'src/js/**/*';
 var cssDest = 'dist/css/';
 var fontFiles = 'src/fonts/**/*';
 var componentFiles = 'src/index.html';
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['fonts','js','scss','components'], function() {
+gulp.task('serve', ['images','fonts','js','scss','components'], function() {
 	browserSync.init({
         server: {
             baseDir: "./",
