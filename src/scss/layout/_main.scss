@@ -10,10 +10,16 @@ main {
         //fallback
         height: 431px;
         height: calc(100vh - 100vh + 431px * 2 / 2 + 14px - 1rem);
+        height: 100vh;
         color: #fff;
-        padding: 0 0 150px 0;
-        background: url(../img/visual.jpg) center no-repeat;
-        background-size: cover;
+        &__text {
+           display: flex;
+           justify-content: center;
+           align-content: center;
+           font-size: 5rem;
+           max-width: 1110px;
+           text-shadow: 2px 2px rgba(2,2,2,.5);
+        }
         &__intro, &__action {
             display: flex;
             width: 100%;
@@ -43,24 +49,6 @@ main {
             span {
                 font-size: 3rem;
             }
-        }
-        .fog:after, .fog:before {
-            content: '';
-            height: 100%;
-            width: 100%;
-            background: rgba(111,111,111,.25) url(../img/fog.png) center repeat-x;
-            background-size: auto 100vh;
-            animation: animate 500s linear infinite;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-        .fog:before {
-            opacity: .25;
-            animation: animate 750s linear infinite;
-            transform: rotate(180deg);
         }
         figure {
             padding: 0;
