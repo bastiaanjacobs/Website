@@ -9,8 +9,8 @@
     border-radius: 50%;
     position: absolute;
     top: -25px;
+    color: $primary-color;
     background: #fff;
-    color: $secondary-color;
     transition: box-shadow 150ms cubic-bezier(.4,0,1,1);
     &:hover {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
