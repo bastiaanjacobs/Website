@@ -1,8 +1,13 @@
 header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     display: flex;
     padding: $space;
-    border-bottom: 1px solid $grey;
-    a { @include link-colors($secondary-color, $primary-color, $secondary-color, $secondary-color, $secondary-color); }
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    a { @include link-colors(#fff, #fff, #fff, #fff, #fff); }
     nav {
         ul {
             display: flex;
