@@ -49,7 +49,7 @@ jQuery(function($) {
   $('.count.completedprojects').countTo({
       from: 0,
       to: 80,
-      speed: 2500,
+      speed: 500,
       refreshInterval: 50,
       onComplete: function(value) {
           console.debug(this);
@@ -61,7 +61,7 @@ jQuery(function($) {
   $('.count.newprojects').countTo({
       from: 0,
       to: 3,
-      speed: 2500,
+      speed: 500,
       refreshInterval: 50,
       onComplete: function(value) {
           console.debug(this);
@@ -73,7 +73,7 @@ jQuery(function($) {
   $('.count.working').countTo({
       from: 0,
       to: 8,
-      speed: 2500,
+      speed: 500,
       refreshInterval: 50,
       onComplete: function(value) {
           console.debug(this);
