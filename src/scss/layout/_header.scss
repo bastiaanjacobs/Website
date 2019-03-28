@@ -1,12 +1,12 @@
 header {
-    height: 4rem;
     z-index: 1;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
     display: flex;
-    padding: 0 $space;
+    margin: $space;
+    padding: $space;
     border-bottom: 1px solid rgba(255,255,255,.25);
     a { @include link-colors(#fff, #fff, #fff, #fff, #fff); }
     nav {

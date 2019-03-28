@@ -1,24 +1,22 @@
 main {
     padding: 0;
     .banner {
-        padding: 4rem 1rem;
+        padding: 4rem;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-flow: row wrap;
         position: relative;
         width: 100%;
-        //fallback
-        height: 431px;
-        height: calc(100vh - 100vh + 431px * 2 / 2 + 14px - 1rem);
         color: #fff;
         &__text {
-           display: flex;
-           justify-content: center;
-           align-content: center;
-           font-size: 3rem;
-           max-width: 450px;
-           text-shadow: 2px 2px rgba(2,2,2,.5);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 1rem;
+            font-size: 3rem;
+            max-width: 50%;
+            text-shadow: 2px 2px rgba(2,2,2,.5);
         }
         &__intro, &__action {
             display: flex;
