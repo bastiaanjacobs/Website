@@ -1,11 +1,12 @@
 header {
+    height: 4rem;
     z-index: 1;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     display: flex;
-    margin: $space;
+    margin: $space*3 $space 0 $space;
     padding: $space;
     border-bottom: 1px solid rgba(255,255,255,.25);
     a { @include link-colors(#fff, #fff, #fff, #fff, #fff); }

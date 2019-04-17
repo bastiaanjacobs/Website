@@ -15,13 +15,14 @@ var tsProject               = ts.createProject('tsconfig.json');
 
 var scss_src = 'src/scss/**/*.scss';
 var imageFiles = 'src/img/*';
+var videoFiles = 'src/video/*';
 var jsFiles = 'src/js/**/*';
 var cssDest = 'dist/css/';
 var fontFiles = 'src/fonts/**/*';
 var componentFiles = 'src/index.html';
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['images','fonts','js','scss','components'], function() {
+gulp.task('serve', ['images','videos','fonts','js','scss','components'], function() {
 	browserSync.init({
         server: {
             baseDir: "./",
@@ -54,6 +55,10 @@ gulp.task('scss', function () {
 gulp.task('images', function () {
     return gulp.src(imageFiles)
     .pipe(gulp.dest('./dist/img'))
+});
+gulp.task('videos', function () {
+    return gulp.src(videoFiles)
+    .pipe(gulp.dest('./dist/video'))
 });
 gulp.task('js', function () {
     return gulp.src(jsFiles)

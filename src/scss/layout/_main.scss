@@ -1,10 +1,10 @@
 main {
     padding: 0;
     .banner {
-        padding: 4rem;
+        padding: 8rem 4rem 4rem 4rem;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: flex-start;
         flex-flow: row wrap;
         position: relative;
         width: 100%;
@@ -13,10 +13,35 @@ main {
             display: flex;
             justify-content: center;
             align-content: center;
-            padding: 1rem;
+            width: 45%;
+            padding: 0;
+            margin: 0 0 1rem 0;
             font-size: 3rem;
-            max-width: 50%;
-            text-shadow: 2px 2px rgba(2,2,2,.5);
+            &-intro {
+                font-size: 2rem;
+                font-weight: 700;
+                display: flex;
+                color: #000;
+                background: #fff;
+                mix-blend-mode: screen;
+                padding: 1rem 3rem;
+                line-height: 2.5rem;
+                flex-shrink: 2;
+                align-items: center;
+                justify-content: center;
+            }
+            &-outro {
+                font-size: 1.5rem;
+                display: flex;
+                justify-content: right;
+                align-items: flex-end;
+                text-align: right;
+                color: #fff;
+                background: #000;
+                mix-blend-mode: multiply;
+                padding: 3rem;
+                line-height: 2rem;
+            }
         }
         &__intro, &__action {
             display: flex;
@@ -38,7 +63,7 @@ main {
         &__highlight {
             padding: 25px 50px;
             margin: 5px;
-            color: $primary-color;
+            color: $secondary-color;
             display: flex;
             flex-direction: column;
             justify-content: center;

@@ -1,0 +1,55 @@
+.notification {
+    height: 3rem;
+    box-shadow: 3px 0 3px 0 rgba(000, 000, 000, 0.5);
+}
+
+.notification__dot {
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #111;
+}
+
+.notification__dot.active { background: #40bd45; }
+.notification__dot.busy { background: #ffae00; }
+.notification__dot.dnd { background: #f32b2b; }
+
+.notification__text {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #666;
+    margin-left: 1.5rem;
+}
+
+.notification__alt {
+    font-size: 12px;
+    color: #4a4a4a;
+    padding: 0;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.notification__pulsate {
+    position: absolute;
+    top: calc(1rem - 4px);
+    left: calc(1rem - 4px);
+    border: 4px solid #333;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    box-sizing: content-box;
+}
