@@ -1,8 +1,3 @@
-html:hover {
-    .fog__visual {
-        left: -200vw;
-    }
-}
 .fog {
     &__message {
         display: flex;
@@ -14,15 +9,12 @@ html:hover {
         margin: 1rem;
         color: #111;
         background: #b8b490;
-        //background: #b8b490 url(../img/person.png) center no-repeat;
-        //background-size: 50% 50%;
         border: 0 solid #111;
         border-radius: 50%;
         box-shadow: inset 0 0 5px #111;
     }
     &__visual {
-        will-change: position, left;
-        height: 100%;
+        will-change: animation;
         position: absolute;
         top: 0;
         right: 0;
@@ -30,11 +22,13 @@ html:hover {
         left: 0;
         display: block;
         height: 100%;
-        width: 400vw;
-        transition: left 15s;
+        width: 3840px;
+        opacity: .5;
+        animation: marquee 30s linear infinite;
         &.alternate {
             opacity: .25;
-            transform: rotate(180deg);
+            animation-delay: 5s;
+            animation: marquee 10s linear infinite;
         }
     }
     overflow: hidden;
