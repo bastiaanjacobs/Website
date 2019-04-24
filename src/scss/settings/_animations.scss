@@ -1,6 +1,7 @@
 @keyframes marquee {
-    0% { transform: translate3d(0,0,0); }
-    100% { transform: translate3d(-1920px,0,0); }
+    0% { transform: translate3d(0,0,0); opacity: .5; }
+    50% { transform: translate3d(-100vw,0,0); opacity: 1; }
+    100% { transform: translate3d(0,0,0); opacity: .5; }
 }
 
 @keyframes animate {
