@@ -1,18 +1,20 @@
 <main class="row">
     <section class="container-fluid">
         <!-- fog -->
-            <section class="fog col-12">
+            <section class="col-12">
                 <div class="row">
                     <div class="container-fluid">
-                        <span class="hidden fog__message">lorem ipsum</span>
-                        <img class="fog__visual" src="dist/img/fog.png">
-                        <img class="fog__visual alternate" src="dist/img/fog.png">
-                        <!-- header -->
-                            @@include('_banner.html')
-                        <!-- /header -->
+                        <div class="fog">
+                            <span class="hidden fog__message">lorem ipsum</span>
+                            <img class="hidden fog__visual" src="dist/img/fog.png">
+                            <img class="hidden fog__visual alternate" src="dist/img/fog.png">
+                            <!-- header -->
+                                @@include('_banner.html')
+                            <!-- /header -->
+                        </div>
                     </div>
+                    <span class="hidden photo-credits">photo by <a href="https://unsplash.com/@carminu">carmine de fazio</a></span>
                 </div>
-                <span class="hidden photo-credits">photo by <a href="https://unsplash.com/@carminu">carmine de fazio</a></span>
             </section>
         <!-- /fog -->
         <!-- projects -->
@@ -24,6 +26,7 @@
         <!-- /projects -->
     </section>
     
+    <section class="hidden container-fluid content__outer"></section>
     <section class="container">
         <!-- content -->
         <div class="content">
@@ -31,7 +34,7 @@
                 <div class="site__title"><a href="#">Site Title</a></div>
                 <div class="site__breadcrumb"><a href="#">Site</a> > <a href="#">Bread</a> > Crumb</div>
             </div>
-     
+    
             <div class="content__inner">
                 <span class="back__button">
                     <i class="ms-Icon ms-Icon--PageLeft" title="PageLeft" aria-hidden="true"></i>

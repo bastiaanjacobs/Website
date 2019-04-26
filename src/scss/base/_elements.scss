@@ -1,11 +1,3 @@
-:root {
-	--my-color-rgb: 255, 0, 0; 
-}
-
-.text {
-	color: rgba(var(--my-color-rgb), 0.5);
-}
-
 html {
 	background: $bg-color;
 	* {

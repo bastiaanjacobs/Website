@@ -1,5 +1,21 @@
 .fog {
     transform: translate3d(0,0,0);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    height: calc(100vh - 3rem);
+    color: #fff;
+    background: url(../img/34.jpg) top left no-repeat;
+    background-size: cover;
+    opacity: 1;
+    border: 1rem solid #111;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0 0 $space*10 0;
     &__message {
         display: flex;
         justify-content: center;
@@ -31,41 +47,6 @@
             animation-delay: 5s;
             animation: marquee 60s linear infinite;
         }
-    }
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: row wrap;
-    width: 100%;
-    height: calc(100vh - 3rem);
-    color: #fff;
-    padding: 0;
-    background: url(../img/34.jpg) top left no-repeat;
-    background-size: cover;
-    opacity: 1;
-    border: 1rem solid #111;
-    border-top: 0;
-    &:after, &:before {
-        display: none;
-        content: '';
-        height: 100%;
-        width: 5000px;
-        background: rgba(111,111,111,.25) url(../img/fog.png) center repeat-x;
-        background-size: auto 100vh;
-        opacity: .5;
-        animation: animate 50s linear infinite;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-    &:before {
-        opacity: .25;
-        animation: animate 75s linear infinite;
-        transform: rotate(180deg);
     }
 }
 
