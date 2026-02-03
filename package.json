@@ -1,29 +1,16 @@
 {
-  "name": "bastiaanjacobs",
+  "name": "vite-scss-minimal",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-file-include": "^2.0.1",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-typescript": "^3.2.4",
-    "gulp-webserver": "^0.9.1",
-    "http-server": "^0.11.1",
-    "typescript": "^2.6.2"
-  },
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "gulp": "^3.9.1",
-    "sp-pnp-js": "^3.0.4"
+    "gh-pages": "^6.3.0",
+    "sass": "^1.93.3",
+    "vite": "^5.0.0"
   }
 }
