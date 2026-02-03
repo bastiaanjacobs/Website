@@ -1,3 +1,16 @@
-export default {
-  base: '/',
-}
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/Website/',
+  server: {
+    port: 6123,
+    watch: {
+      usePolling: true,
+      interval: 1000,
+    },
+    host: true,
+    strictPort: true,
+  },
+})
