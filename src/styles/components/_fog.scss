@@ -40,14 +40,10 @@
 
     img {
       position: absolute;
-      bottom: auto;
-      top: 0;
+      bottom: 0;
+      top: auto;
       max-width: 100%;
       animation: fog_effect calc(3s * var(--i)) ease-in infinite;
-      @media (min-width: 768px) {
-        top: auto;
-        bottom: 0;
-      }
     }
   }
 }

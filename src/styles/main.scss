@@ -163,6 +163,15 @@ svg {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  transition: opacity .25s;
+
+  @media (min-width: 720px) {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .flex {
@@ -501,15 +510,5 @@ svg {
         max-width: 40vw;
       }
     }
-  }
-}
-
-body:hover #main {
-  opacity: 1;
-
-  #main {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    will-change: opacity;
   }
 }
